@@ -80,7 +80,7 @@ sudo apt install openjdk-8-jdk openjdk-8-jre
 
 Si vous avez installé java de la seconde façon, il faut ajouter les lignes suivantes dans le fichier *.bash_profile* situé dans notre *home* :
 ```
-export JAVA_HOME= /usr/lib/jvm/java-8-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 ```
 
@@ -152,18 +152,21 @@ Pour installer java 1.8 et Spark, suivre [cet article](https://medium.com/big-da
 Option 1 : Dans le terminal
 
 Allez dans la home, téléchargez spark, puis décompressez-le :
+
 ```
+export SPARK_VERSION=3.0.1
 cd
-wget http://ftp.tudelft.nl/apache/spark/spark-2.3.4/spark-2.3.4-bin-hadoop2.7.tgz
-tar -xvzf spark-2.3.4-bin-hadoop2.7.tgz
+wget https://apache.mirrors.benatherton.com/spark/spark-$SPARK_VERSION/spark-$SPARK_VERSION-bin-hadoop2.7.tgz
+tar -xvzf spark-$SPARK_VERSION-bin-hadoop2.7.tgz
 ```
+
 
 Option 2 : Installation manuelle
 
 Aller sur http://spark.apache.org/downloads.html puis :
-- Spark release : 2.3.4
+- Spark release : 3.0.1
 - Package type : pre-built for apache hadoop 2.7 and later
-- cliquer sur le lien : spark-2.3.4-bin-hadoop2.7.tgz
+- cliquer sur le lien : spark-3.0.1-bin-hadoop2.7.tgz
 
 Une fois téléchargé, copier le fichier *.tgz* dans votre répertoire *home* (dans un terminal entrez: `echo $HOME` pour savoir où est votre *home*). Puis décompresser le fichier *.tgz* via un `tar -xvzf <spark>` (remplacer `<spark>` par le bon nom).
 
@@ -171,7 +174,7 @@ Une fois téléchargé, copier le fichier *.tgz* dans votre répertoire *home* (
 
 Dans le terminal, aller dans le répertoire où spark est installé, puis dans le répertoire *bin*, et lancer le *spark-shell*. Par exemple :
 ```
-cd spark-2.3.4-bin-hadoop2.7/bin
+cd spark-3.0.1-bin-hadoop2.7/bin
 ./spark-shell
 ```
 
@@ -183,7 +186,7 @@ Il faut tout d'abord copier le fichier de configuration des logs par défaut *lo
 
 Dans un terminal :
 ```
-cd spark-2.3.4-bin-hadoop2.7/conf
+cd spark-3.0.1-bin-hadoop2.7/conf
 cp log4j.properties.template log4j.properties
 ```
 
@@ -335,7 +338,7 @@ L’adresse du jar est donnée vers la fin du script :
 
 Dans un terminal :
 ```
-cd spark-2.3.4-bin-hadoop2.7/sbin # attention c’est bien "sbin"
+cd spark-3.0.1-bin-hadoop2.7/sbin # attention c’est bien "sbin"
 ./start-all.sh
 ```
 
@@ -359,7 +362,7 @@ Soumettre le jar du script qui a été compilé:
 
 Dans un terminal :
 ```
-cd spark-2.3.4-bin-hadoop2.7/bin # !!!! Attention c’est bien "bin" maintenant
+cd spark-3.0.1-bin-hadoop2.7/bin # !!!! Attention c’est bien "bin" maintenant
 
 ./spark-submit \
 --driver-memory 3G \
