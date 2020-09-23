@@ -39,7 +39,7 @@ Suivre la section [Setup TP 2](setup.md#setup-tp-2-installation-de-sbt-intellij-
 
 ### Téléchargement du projet
 
-Pour télécharger le template du projet Spark [*spark_project_kickstarter_2019_2020*](https://github.com/Flooorent/spark_project_kickstarter_2019_2020) :
+Pour télécharger le template du projet Spark [*spark_project_kickstarter_2019_2020*](https://github.com/SimonBenhamou/spark_project_kickstarter_2019_2020) :
 
 Option 1 (recommandée) : Fork et clone sur GitHub
 
